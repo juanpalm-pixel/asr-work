@@ -4,6 +4,12 @@ A reproducible starter repository for **automatic speech recognition in linguist
 
 > **Status:** Teaching/research starter. The local scripts below work without model training, but the MMS fine-tuning notebook and project-specific audio, transcriptions, and checkpoints are **not included yet**. The repo is public: never commit confidential or participant-identifiable recordings.
 
+## Student Google Colab notebook
+
+[**Open Session 05 — MMS ASR in Google Colab**](https://colab.research.google.com/github/juanpalm-pixel/asr-work/blob/main/notebooks/Session_05_MMS_ASR_Colab.ipynb)
+
+The interactive workbook covers environment setup, browsing Hugging Face FLEURS data, your own audio/CSV option, baseline MMS inference, language-specific character vocabularies, basic MMS adapter fine-tuning on a GPU, CER, and saving the adapter. **The GPU training section is opt-in**; check the notebook's data-use warnings before uploading recordings.
+
 ## Three connected workflows
 
 1. **Whisper: accessible CLI demo.** Transcribe a Mandarin-dominant class recording with occasional English, inspect the output and its errors. See [Whisper demo](docs/whisper-demo.md).
@@ -15,7 +21,7 @@ The teaching session follows **Welcome → Lecture 1 → Practical 1 → Task 1 
 ## Quick start (Ubuntu / WSL)
 
 ```bash
-git clone https://github.com/juanpalm-pixel/htr-work.git
+git clone https://github.com/juanpalm-pixel/asr-work.git
 cd htr-work
 python3 -m venv .venv
 source .venv/bin/activate
