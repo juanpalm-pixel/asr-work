@@ -1,0 +1,3 @@
+# Optional. Requires an ffmpeg executable on PATH.
+# PyTorch dependencies depend on CPU/GPU configuration.
+openai-whisper

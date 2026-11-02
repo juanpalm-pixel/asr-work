@@ -1,0 +1,8 @@
+{
+  "_note": "Edit for your transcription policy. No symbols are removed by default. Only explicitly approved literal replacements are applied.",
+  "unicode_form": "NFC",
+  "strip_outer_whitespace": true,
+  "collapse_internal_whitespace": false,
+  "lowercase": false,
+  "replacements": {}
+}

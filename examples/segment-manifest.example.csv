@@ -1,0 +1,3 @@
+segment_id,audio_path,start_ms,end_ms,dur_ms,speaker,tier,text_original,text_target
+demo_001,/replace/with/your/audio.wav,1000,2500,1500,SPK01,transcription,ma555,ma555
+demo_002,/replace/with/your/audio.wav,2600,4000,1400,SPK01,transcription,hello,hello
