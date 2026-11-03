@@ -28,6 +28,8 @@ whisper part-1/task-audio/english.wav part-1/task-audio/german.wav part-1/task-a
 
 CER is the character-level Levenshtein edit distance divided by the number of reference characters. Both texts were Unicode NFC-normalised and lowercased; punctuation was replaced with spaces, except apostrophes, which were removed. Repeated whitespace was collapsed to one space. Spaces are counted as characters. Each score covers the whole assembled clip.
 
+The Maltese result has no correctly recognised Maltese words, despite its CER being below 100%. One optimal character alignment contains 59 matching characters (including spaces and incidental Latin letters), 178 substitutions, 351 deletions, and no insertions: `(178 + 351) / 588 = 89.97%`. A substitution counts as one edit; CER does not measure whole-word correctness.
+
 ## English
 
 **Audio:** [Play or download the English clip](part-1/task-audio/english.wav)
