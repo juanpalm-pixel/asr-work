@@ -1,0 +1,17 @@
+data/*
+!data/README.md
+results/
+audio.txt
+/*.txt
+*.wav
+*.mp3
+*.m4a
+*.flac
+*.ogg
+*.mp4
+*.mov
+*.srt
+*.vtt
+*.tsv
+*.json
+__pycache__/
