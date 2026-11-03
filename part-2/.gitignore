@@ -1,12 +1,13 @@
+# This file is inside part-2, so / anchors paths to part-2 itself.
 # Never commit raw recordings, ELAN transcriptions, private text or trained weights.
-data/*
-!data/README.md
-outputs/
-checkpoints/
-models/
-runs/
-logs/
-cache/
+/data/*
+!/data/README.md
+/outputs/
+/checkpoints/
+/models/
+/runs/
+/logs/
+/cache/
 *.wav
 *.mp3
 *.m4a
@@ -22,8 +23,8 @@ cache/
 *.ckpt
 .env
 .env.*
-.venv/
-venv/
+/.venv/
+/venv/
 __pycache__/
 *.py[cod]
 .pytest_cache/
