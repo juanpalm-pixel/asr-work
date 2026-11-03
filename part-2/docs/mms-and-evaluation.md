@@ -14,7 +14,9 @@ This is the **research-oriented** track after the accessible Whisper demo.
 8. Decode held-out examples and compare hypotheses with reference transcriptions.
 9. Report CER/WER and error categories; iterate on segmentation, target consistency, data balance, model and decoding.
 
-A **shared Colab notebook and trained checkpoint are not included yet**. Do not represent this guide as a complete training command. Hugging Face's [MMS model documentation](https://huggingface.co/docs/transformers/model_doc/mms) and [MMS adapter fine-tuning tutorial](https://huggingface.co/blog/mms_adapters) are good starting points. Colab's free GPU allocations are variable and not guaranteed.
+The [student Colab notebook](../notebooks/Session_05_MMS_ASR_Colab.ipynb) demonstrates a short MMS adapter run; a trained checkpoint is not included. Students add a **read** Hugging Face token to Colab Secrets as `HF_TOKEN`, then uncomment exactly one FLEURS dataset and MMS language pair: English (`en_us`/`eng`), German (`de_de`/`deu`) or Maltese (`mt_mt`/`mlt`). They should state their chosen language, corpus and settings in their MMS work. The [FLEURS dataset](https://huggingface.co/datasets/google/fleurs) is public and does not itself require a token. Hugging Face's [MMS model documentation](https://huggingface.co/docs/transformers/model_doc/mms) and [MMS adapter fine-tuning tutorial](https://huggingface.co/blog/mms_adapters) provide the model details. Colab's free GPU allocations are variable and not guaranteed.
+
+For larger English, German or Maltese ASR datasets, see [Mozilla Common Voice on Mozilla Data Collective](https://mozilladatacollective.com/datasets?q=common+voice). Mozilla now distributes Common Voice there, rather than from its former Hugging Face dataset repository. Check the chosen release's terms and transcript conventions before using it.
 
 ## CTC in one paragraph
 
