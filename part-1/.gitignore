@@ -5,6 +5,7 @@ audio.txt
 environment-gpu.yml
 /*.txt
 *.wav
+!task-audio/*.wav
 *.mp3
 *.m4a
 *.flac
