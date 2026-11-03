@@ -6,9 +6,11 @@ A reproducible starter repository for **automatic speech recognition in linguist
 
 ## Student Google Colab notebook
 
-[**Open Session 05 — MMS ASR in Google Colab**](https://colab.research.google.com/github/juanpalm-pixel/asr-work/blob/main/notebooks/Session_05_MMS_ASR_Colab.ipynb)
+[**Open Session 05 — MMS ASR in Google Colab**](https://colab.research.google.com/github/juanpalm-pixel/asr-work/blob/main/part-2/notebooks/Session_05_MMS_ASR_Colab.ipynb)
 
-The interactive workbook covers environment setup, browsing Hugging Face FLEURS data, your own audio/CSV option, baseline MMS inference, language-specific character vocabularies, basic MMS adapter fine-tuning on a GPU, CER, and saving the adapter. **The GPU training section is opt-in**; check the notebook's data-use warnings before uploading recordings.
+The interactive workbook covers Hugging Face token setup, choosing exactly one English, German or Maltese FLEURS dataset and matching MMS language, your own audio/CSV option, baseline MMS inference, language-specific character vocabularies, basic MMS adapter fine-tuning on a GPU, CER, and saving the adapter. Create a free [Hugging Face account](https://huggingface.co/join), make a **read** token in [Access Tokens](https://huggingface.co/settings/tokens), and add it to Colab Secrets as `HF_TOKEN` before running the notebook. FLEURS is public; the token is part of the workbook setup, not an access requirement for FLEURS. **The GPU training section is opt-in**; check the notebook's data-use warnings before uploading recordings.
+
+For a larger spoken corpus used in ASR work, explore [Mozilla Common Voice on Mozilla Data Collective](https://mozilladatacollective.com/datasets?q=common+voice), including English, German and Maltese releases. Common Voice downloads moved from Hugging Face to Mozilla Data Collective; the notebook uses smaller [FLEURS](https://huggingface.co/datasets/google/fleurs) samples so the practical is manageable in Colab.
 
 ## Three connected workflows
 
@@ -22,7 +24,7 @@ The teaching session follows **Welcome → Lecture 1 → Practical 1 → Task 1 
 
 ```bash
 git clone https://github.com/juanpalm-pixel/asr-work.git
-cd htr-work
+cd asr-work/part-2
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
@@ -47,10 +49,10 @@ Whisper names the result from the input file stem (for example, `outputs/whisper
 python scripts/eaf_to_csv.py --eaf "/path/to/recording.eaf" --tier "transcription" --audio "/path/to/recording.wav" --output data/segments.csv
 
 # Inspect the headers and edit the project-specific normalisation config first.
-python scripts/normalize_manifest.py --input data/segments.csv --output data/segments_normalized.csv --config config/normalization.example.json
+python scripts/normalise_manifest.py --input data/segments.csv --output data/segments_normalised.csv --config config/normalisation.example.json
 
 # Requires ffmpeg; creates 16 kHz, mono PCM WAV clips and a new manifest.
-python scripts/prepare_segments.py --input data/segments_normalized.csv --output data/clip_manifest.csv --clips-dir data/clips
+python scripts/prepare_segments.py --input data/segments_normalised.csv --output data/clip_manifest.csv --clips-dir data/clips
 
 # Evaluate an already prepared CSV with reference and hypothesis columns.
 python scripts/evaluate_cer.py --csv examples/evaluation.example.csv --ref-column reference --hyp-column hypothesis
@@ -76,10 +78,10 @@ The demonstration data under `examples/` is **synthetic**, not speech recordings
 ## Principles
 
 - **Data quality before model scale.** Check recording quality, segment boundaries, matched transcript, Unicode and tone representation.
-- **No destructive cleaning.** Keep `text_original`; create separate `text_target`. Do not remove tone, aspiration, punctuation or capitalization without a research reason.
+- **No destructive cleaning.** Keep `text_original`; create separate `text_target`. Do not remove tone, aspiration, punctuation or capitalisation without a research reason.
 - **No leakage.** Reserve independent validation/test data and consider speaker/recording overlap.
 - **Inspect the actual mistakes.** CER is not sufficient if a low-error model systematically loses a meaningful tone or segment contrast.
-- **Human remains responsible.** AI can help discover models or explain commands, but check permissions, model cards, licenses, scripts and suggested shell commands.
+- **Human remains responsible.** AI can help discover models or explain commands, but check permissions, model cards, licences, scripts and suggested shell commands.
 
 ## Still to add
 
@@ -87,6 +89,6 @@ The demonstration data under `examples/` is **synthetic**, not speech recordings
 - Specific tier selection and tone mappings for Yonghe Qiang; never guess them from another corpus.
 - A tested shared Google Colab notebook for **MMS adapter fine-tuning** and a small pre-trained “finished cake” model.
 - Dataset provenance, speaker-safe splits, a model card and error-analysis results.
-- A license once the owner chooses one. **No license is granted by default.**
+- A licence once the owner chooses one. **No licence is granted by default.**
 
 Maintainer: repository owner. Contributions and research practices can be revised as the course develops.
