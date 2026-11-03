@@ -7,7 +7,7 @@ Suggested local layout:
 - `data/source_audio/` — original permission-cleared recordings, never modified
 - `data/source_eaf/` — original ELAN annotations
 - `data/segments.csv` — exported aligned segments
-- `data/segments_normalized.csv` — text_original + text_target
+- `data/segments_normalised.csv` — text_original + text_target
 - `data/clips/` — derived 16 kHz mono WAV excerpts
 - `data/clip_manifest.csv` — one row per clip
 - `data/train/`, `data/validation/`, `data/test/` — split manifests
