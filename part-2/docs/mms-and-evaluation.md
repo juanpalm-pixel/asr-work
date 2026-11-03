@@ -9,7 +9,7 @@ This is the **research-oriented** track after the accessible Whisper demo.
 3. Preserve original transcriptions; document every normalisation.
 4. Create training, validation and held-out test splits, checking speakers and recordings.
 5. Load an appropriate pretrained **MMS CTC** ASR checkpoint/processor.
-6. Prefer **adapter fine-tuning** for a realistic low-resource Colab exercise; check the checkpoint, tokenizer, vocabulary and license.
+6. Prefer **adapter fine-tuning** for a realistic low-resource Colab exercise; check the checkpoint, tokeniser, vocabulary and licence.
 7. Start training; use a previously prepared model/checkpoint to demonstrate inference without waiting.
 8. Decode held-out examples and compare hypotheses with reference transcriptions.
 9. Report CER/WER and error categories; iterate on segmentation, target consistency, data balance, model and decoding.
@@ -18,7 +18,7 @@ A **shared Colab notebook and trained checkpoint are not included yet**. Do not 
 
 ## CTC in one paragraph
 
-Connectionist Temporal Classification (CTC) learns to connect many audio frames to a shorter sequence of target symbols without the researcher annotating the exact time of every symbol. A CTC-trained model can also support **forced alignment** of *known* transcripts to audio, provided the model and tokenizer represent the transcript reliably. Forced alignment is not the same thing as ASR and is not the required introductory task.
+Connectionist Temporal Classification (CTC) learns to connect many audio frames to a shorter sequence of target symbols without the researcher annotating the exact time of every symbol. A CTC-trained model can also support **forced alignment** of *known* transcripts to audio, provided the model and tokeniser represent the transcript reliably. Forced alignment is not the same thing as ASR and is not the required introductory task.
 
 ## CER and WER
 

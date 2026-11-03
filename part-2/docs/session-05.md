@@ -24,7 +24,7 @@ This is a **cooking-show demonstration**: start a training process with prepared
 
 ## Practical 1 — Whisper
 
-Instructor sample: one short, authorized recording from a set of five Mandarin-class audio files, mostly Mandarin with occasional English. The audio is **not stored in this repository**.
+Instructor sample: one short, authorised recording from a set of five Mandarin-class audio files, mostly Mandarin with occasional English. The audio is **not stored in this repository**.
 
 ```bash
 whisper --help
@@ -48,8 +48,8 @@ Instructor uses a prepared **Yonghe Qiang pipeline** example. `.eaf` stores time
 
 ```bash
 python scripts/eaf_to_csv.py --eaf path/to/recording.eaf --tier transcription --audio path/to/recording.wav --output data/segments.csv
-python scripts/normalize_manifest.py --input data/segments.csv --output data/segments_normalized.csv --config config/normalization.example.json
-python scripts/prepare_segments.py --input data/segments_normalized.csv --output data/clip_manifest.csv --clips-dir data/clips
+python scripts/normalise_manifest.py --input data/segments.csv --output data/segments_normalised.csv --config config/normalisation.example.json
+python scripts/prepare_segments.py --input data/segments_normalised.csv --output data/clip_manifest.csv --clips-dir data/clips
 ```
 
 Show the **MMS CTC adapter training configuration** in a pre-prepared Colab notebook (to be added), explain held-out data, then use a completed model to generate hypotheses and compare CER.
@@ -63,7 +63,7 @@ Show the **MMS CTC adapter training configuration** in a pre-prepared Colab note
 
 ## Post-session reflection (200–500 words)
 
-Preferred: fine-tune an MMS adapter in the **provided/verified** Colab notebook, if a GPU is available. Alternative: run and critically evaluate pretrained Whisper or Allosaurus (note Allosaurus is **phone recognition**, not orthographic ASR). Report the language, source/permissions, transcription method, exact commands, data and normalization, problems, attempted solutions, and error patterns. For ASR, report CER if a valid reference exists; **do not report an orthographic CER between Allosaurus phones and spelling**. Explain what would improve the workflow.
+Preferred: fine-tune an MMS adapter in the **provided/verified** Colab notebook, if a GPU is available. Alternative: run and critically evaluate pretrained Whisper or Allosaurus (note Allosaurus is **phone recognition**, not orthographic ASR). Report the language, source/permissions, transcription method, exact commands, data and normalisation, problems, attempted solutions, and error patterns. For ASR, report CER if a valid reference exists; **do not report an orthographic CER between Allosaurus phones and spelling**. Explain what would improve the workflow.
 
 Free Colab GPU access is not guaranteed; assessment should focus on reasoning and reproducibility, not whether a GPU was granted.
 

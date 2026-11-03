@@ -41,7 +41,7 @@ Some evaluation exports use `hyp`, `hypothesis`, `pred`, `prediction`, `hyp_text
 Our slicer can recognise common audio, start, duration and end headings; the `--unsuffixed-unit` option specifies whether plain `start`/`end` values are in seconds or milliseconds. Explicit suffixes always take priority.
 
 ```bash
-python scripts/prepare_segments.py --input data/segments_normalized.csv --output data/clip_manifest.csv --clips-dir data/clips
+python scripts/prepare_segments.py --input data/segments_normalised.csv --output data/clip_manifest.csv --clips-dir data/clips
 ```
 
 This uses ffmpeg to create 16 kHz mono PCM WAV files. It does not perform VAD or infer speaker turns.
@@ -55,7 +55,7 @@ For example, `ma555` and `ma5` may be different encodings of similar tonal infor
 The example configuration is conservative by default:
 
 ```bash
-python scripts/normalize_manifest.py --input data/segments.csv --output data/segments_normalized.csv --config config/normalization.example.json
+python scripts/normalise_manifest.py --input data/segments.csv --output data/segments_normalised.csv --config config/normalisation.example.json
 ```
 
 It preserves `text_original` and writes `text_target`. Set literal replacements in the JSON only after checking intended meanings; keep the script, config and experiment ID together.

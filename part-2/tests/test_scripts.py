@@ -11,7 +11,7 @@ def load(module, filename):
     spec.loader.exec_module(mod)
     return mod
 
-normalise = load("normalise", "normalize_manifest.py").normalise
+normalise = load("normalise", "normalise_manifest.py").normalise
 edit_distance = load("evaluate", "evaluate_cer.py").edit_distance
 evaluate = load("evaluate2", "evaluate_cer.py").evaluate
 convert = load("eaf", "eaf_to_csv.py").convert

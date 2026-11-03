@@ -10,4 +10,4 @@ This repository is **public** and deliberately contains no participant recording
 - Use synthetic data for unit tests and teaching examples.
 - Before releasing a model, document data provenance, intended uses, known errors and limits in a model card.
 
-The instructor's five Mandarin-class recordings are intentionally not included. If they are ever added, obtain appropriate authorization first and document redistribution terms.
+The instructor's five Mandarin-class recordings are intentionally not included. If they are ever added, obtain appropriate authorisation first and document redistribution terms.

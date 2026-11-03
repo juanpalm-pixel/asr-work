@@ -23,7 +23,7 @@ Record: the exact command, the full error, Python version, current directory (`p
 
 1. **Local help:** `whisper --help`, `python scripts/eaf_to_csv.py --help` and tracebacks.
 2. **README / manuals:** the project repository and package documentation.
-3. **Model cards / dataset cards:** on [Hugging Face](https://huggingface.co/models), verify language, license, intended use, hardware and known limitations.
+3. **Model cards / dataset cards:** on [Hugging Face](https://huggingface.co/models), verify language, licence, intended use, hardware and known limitations.
 4. **GitHub Issues / Discussions:** look for version-specific reports; search before opening an issue.
 5. **Stack Overflow / relevant Stack Exchange:** for reproducible Python, command-line and OS questions.
 6. **Your AI assistant:** ask it to explain the evidence and propose *minimal, reversible* fixes; verify against the above sources.
