@@ -109,6 +109,19 @@ Apparti mill-avveniment ta’ nhar l-Erbgħa, Carpanedo kkompeta f’żewġ tlie
 
 The Maltese run was automatically identified by Whisper as Arabic; its output above is shown exactly as produced.
 
+## Compare the results in class
+
+Listen to the three clips and use the transcripts above to discuss these questions. The observations below give the class a starting point; check any uncertain passage against the audio.
+
+| Question | Worked observation |
+| --- | --- |
+| Which output is closest to its reference? | German has the lowest CER here (1.82%). Most of its text matches, though it omits a word and misspells some words. |
+| Does a low CER mean every detail is right? | No. German still loses `hier`, and English changes words such as `fly` to `fall`. The importance of an error depends on the use of the transcript. |
+| Where does Whisper struggle most? | The Maltese clip was detected as Arabic and its output does not contain correctly recognised Maltese words. Its CER of 89.97% includes incidental character matches. |
+| What should you check before calling something a model error? | Listen to the audio and compare it with a trustworthy reference. The FLEURS references here are published dataset text, not newly verified listening transcripts. |
+
+These are results for these particular clips and settings, not a ranking of how well Whisper handles each language in general.
+
 ## Source and licence
 
 Source rows are the IDs listed in the table, from the `train` split of the [FLEURS test mirror](https://huggingface.co/datasets/rasgaard/fleurs_test). The mirror retains FLEURS audio and text and cites the [original FLEURS dataset](https://huggingface.co/datasets/google/fleurs). The assembled clips contain 0.25-second silent joins; no source speech was trimmed or reordered. Audio and text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).

@@ -1,7 +1,6 @@
 # This file is inside part-2, so / anchors paths to part-2 itself.
-# Never commit raw recordings, ELAN transcriptions, private text or trained weights.
-/data/*
-!/data/README.md
+# Never commit private recordings, transcripts or trained weights.
+/data/
 /outputs/
 /checkpoints/
 /models/

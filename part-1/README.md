@@ -76,38 +76,19 @@ whisper data/*.m4a --model small --model_dir "results/models" --output_format tx
 
 Open the matching file in `results/` in a text editor. Listen to the recording while following the transcript. Check Mandarin words and characters, English phrases, code-switch points, omissions, repetitions, punctuation, and any text produced during silence. Record what you hear before editing the model output.
 
-Whisper writes the generated transcripts to `results/`. If trusted reference transcripts become available, place them in `data/precomputed/` with a clear mapping to the recordings. Use [the comparison sheet](comparison-sheet.md) to note recurring mistakes. Only claim an error when you can check it against the audio or a trusted human transcript.
+Whisper writes the generated transcripts to `results/`. If trusted reference transcripts become available, place them in `data/precomputed/` with a clear mapping to the recordings. Only claim an error when you can check it against the audio or a trusted human transcript.
 
-## Optional: run the large model on an NVIDIA GPU
+## 5. Your turn: compare three languages
 
-The CPU environment above installs CPU-only PyTorch, so `torch.cuda.is_available()` returns `False` there even if your computer has an NVIDIA GPU. To use a GPU, create the separate environment from `part-1`:
+Open the [worked English, German and Maltese comparison](../task.md). Listen to each supplied clip, inspect the Whisper output and reference transcript, and compare the types of errors. The worked observations are already there so the class can discuss concrete results without waiting for a new transcription run.
 
-```bash
-conda env create --file environment-gpu.yml
-conda activate mandarin-whisper-gpu
-python -c "import torch; print(torch.cuda.is_available())"
-whisper data/*.m4a --model large --model_dir "results/models" --output_format txt --output_dir "results/gpu" --device cuda --fp16 True --task transcribe
-```
+## Precision for this exercise
 
-The check must print `True` before running Whisper. `--device cuda` selects the NVIDIA GPU. The GPU environment uses the [PyTorch CUDA 12.6 wheel](https://pytorch.org/get-started/previous-versions/), and `results/gpu/` is ignored by Git. The large model can sometimes repeat unrelated text; listen to the recording before using its transcript. If repetition occurs, try rerunning that file with `--condition_on_previous_text False`, then check the new result against the audio.
-
-## Precision: FP32, FP16, and BF16
-
-Floating-point formats trade memory and speed against range and precision. Smaller formats can be useful on supported hardware.
-
-| Format | Size | Exponent / fraction bits | Practical meaning |
-| --- | --- | --- | --- |
-| FP32 | 32 bits | 8 / 23 | Broad range and relatively high precision; safe CPU choice here. |
-| FP16 | 16 bits | 5 / 10 | More fraction precision than BF16, but a smaller numerical range; useful on compatible accelerators. |
-| BF16 | 16 bits | 8 / 7 | Similar range to FP32, with less fraction precision than FP16; useful on supported hardware. |
-
-The standard OpenAI Whisper CLI provides `--fp16`, not a `--bf16` switch. On CPU, `--fp16 False` uses FP32. Do not write `--fp16 bf16`.
+The CPU command uses `--fp16 False`, which selects Whisper's FP32 path. The standard OpenAI Whisper CLI does not accept `--bf16`, and `--fp16 bf16` is also invalid. BF16 needs a different implementation with explicit support for it and compatible hardware; it cannot be turned on with a flag in this CLI.
 
 ## Files in this part
 
 - `environment.yml` — complete Conda environment specification for this exercise.
-- `environment-gpu.yml` — optional NVIDIA GPU environment for the large model.
-- `comparison-sheet.md` — blank worksheet for listening and error analysis.
 - `data/README.md` — suggested placement for local recordings and precomputed transcripts.
 - `.gitignore` — keeps recordings, transcripts and outputs out of Git.
 

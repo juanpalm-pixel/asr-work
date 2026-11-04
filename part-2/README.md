@@ -8,15 +8,9 @@ This exercise introduces automatic speech recognition (ASR) with the multilingua
 
 The notebook takes you from sample speech data and transcriptions through baseline MMS inference, optional adapter training and evaluation. Follow it for setup, commands and the practical exercises.
 
-Use your own recordings only with the appropriate permission before uploading them to Colab or another service. See the [data ethics guidance](docs/data-ethics.md).
-
-## Supporting material
-
-- [Session 05 teaching plan](docs/session-05.md) and [MMS and evaluation notes](docs/mms-and-evaluation.md)
-- [EAF data preparation](docs/eaf-pipeline.md), [Whisper demonstration](docs/whisper-demo.md) and [AI troubleshooting](docs/ai-troubleshooting.md)
-- [Data preparation and evaluation scripts](scripts/) with [anonymous example tables](examples/)
+The notebook uses public FLEURS samples by default. If you choose your own audio, prepare the audio and transcript CSV as the notebook describes. Obtain permission before uploading recordings to Colab, Google Drive or another service; do not publish private recordings, transcripts or trained weights without authorisation.
 
 ## Further resources
 
-- [References](docs/references.md)
+- [MMS model documentation](https://huggingface.co/docs/transformers/model_doc/mms) and [FLEURS dataset](https://huggingface.co/datasets/google/fleurs)
 - [w2v2 Colab repository](https://github.com/rolandocoto-cr/w2v2-train-inference-gcolab)
